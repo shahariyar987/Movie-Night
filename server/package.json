@@ -1,0 +1,13 @@
+{
+  "name": "watch-party-server",
+  "version": "1.0.0",
+  "description": "Synchronized movie watch-party server (rooms, chat, emoji, playback sync)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

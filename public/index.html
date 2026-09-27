@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Party</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="join-screen" class="screen">
+    <h1>🎬 Watch Party</h1>
+    <form id="join-form">
+      <input id="name-input" type="text" placeholder="Your name" required />
+      <input id="room-input" type="text" placeholder="Room code (e.g. movie-night)" required />
+      <button type="submit">Join Room</button>
+    </form>
+  </div>
+
+  <div id="app-screen" class="screen hidden">
+    <header>
+      <span>Room: <strong id="room-label"></strong></span>
+      <span id="user-list"></span>
+    </header>
+
+    <main>
+      <div class="video-panel">
+        <form id="server-movies-form" class="video-source-row">
+          <select id="server-movies-select">
+            <option value="">Movies on this server...</option>
+          </select>
+          <button type="submit">Play This</button>
+        </form>
+        <form id="video-url-form" class="video-source-row">
+          <input id="video-url-input" type="text" placeholder="...or paste a direct video URL (.mp4 link)" />
+          <button type="submit">Set Video</button>
+        </form>
+        <div class="video-wrapper">
+          <video id="video" controls playsinline></video>
+          <div id="emoji-layer"></div>
+          <button id="resume-overlay" class="hidden">▶ Tap to resume</button>
+        </div>
+      </div>
+
+      <div class="chat-panel">
+        <div id="chat-log"></div>
+        <div class="emoji-bar">
+          <button class="emoji-btn" data-emoji="😂">😂</button>
+          <button class="emoji-btn" data-emoji="❤️">❤️</button>
+          <button class="emoji-btn" data-emoji="😮">😮</button>
+          <button class="emoji-btn" data-emoji="👏">👏</button>
+          <button class="emoji-btn" data-emoji="😢">😢</button>
+        </div>
+        <form id="chat-form">
+          <input id="chat-input" type="text" placeholder="Say something..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

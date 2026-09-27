@@ -1,0 +1,9 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.env
+
+# Actual movie files never get committed — only the folder's own README does.
+movies/*
+!movies/README.md
